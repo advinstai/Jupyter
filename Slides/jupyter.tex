@@ -1,0 +1,234 @@
+% ### Uses XeLaTeX ### %
+% ### Needs beamer-master ### %
+\documentclass[aspectratio=169]{beamer} %. Aspect Ratio 16:9
+\usetheme{AI2} % beamerthemeSprace.sty
+% DATA FOR FOOTER
+\date{2019}
+\title{}
+\author{}
+\institute{Advanced Institute for Artificial Intelligence (AI2)}
+\begin{document}    
+% ####################################
+% FIRST SLIDE 						:: \SliTit{<Title of the Talk>}{<Author Name>}{<Intitution>}
+% SLIDE SUB-TITLE					:: \SliSubTit{<Title of the Chapter>}{<Title of the Section>}
+% SLIDE WITH TITLE 					:: \SliT{<Title>}{Content}
+% SLIDE NO TITLE 						:: \Sli{<Content>} 
+% SLIDE DOUBLE COLUMN WITH TITLE 	:: \SliDT{<Title>}{<First Column>}{<Second Column>}
+% SLIDE DOUBLE COLUMN NO TITLE 		:: \SliD{<First Column>}{<Second Column>}
+% SLIDE ADVANCED WITH TITLE 			:: \SliAdvT{<Title>}{<Content>}
+% SLIDE ADVANCED  NO TITLE 			:: \SliAdv{<Content>}
+% SLIDE ADVANCED DOUBLE TITLE 		:: SliAdvDT{<Title>}{<First Column>}{<Second Column>}
+% SLIDE ADVANCED DOUBLE NO TITLE 	:: SliAdvD{<First Column>}{<Second Column>}
+% ITEMIZE 							:: \begin{itemize}  \IteOne{1st Level} \IteTwo {2nd Level} \IteThr{3rd Level} \end{itemize}
+% SECTION 							:: \secx{Section} | \secxx{Sub-Section}
+% COLOR BOX 						:: \blu{blue} + \red{red} + \yel{yellow} + \gre{green}
+% FRAME 							:: \fra{sprace} \frab{blue} \frar{red} + \fray{yellow} + \frag{green}	
+% REFERENCE						:: \refer{<doi number>}
+% FIGURE 							::  \img{X}{Y}{<scale>}{Figures/.png} 
+% FIGURE							:: \begin{center}\includegraphics[scale=<#>]{Figures/.png}\end{center}
+% PROJECT STATUS					:: \planned\~    \started\~   \underway\~   \done\~   
+% EXERCICIO							:: \Exe{<#>}{<text>}
+% STACKREL							:: \underset{<down>}{<up>}
+% FLUSH LEFT						:: \begin{flalign*}  & <1st equation> & \\  & <12nd equation>  & \\ \end{flalign*}
+% REAL / IMAGINAY					:: \Re / \Im
+% SLASH								:: \sl{} or \sl
+% BOLD MATH							:: \pmb{<>}
+% ####################################
+%
+% FIRST SLIDE :: DO NOT BREAK LINE !!!
+\SliTit{Jupyter e Markdown}{Advanced Institute for Artificial Intelligence}{https://advancedinstitute.ai}
+
+% SLIDE WITH TITLE
+\SliT{Title}{
+\secx{Section}
+
+Content
+
+\secxx{Sub-Section}
+
+Content
+}
+
+% SLIDE NO TITLE
+\Sli{
+\secx{Section}
+
+
+project status \planned\~ 
+
+project status \started\~
+
+project status \underway\~
+ 
+project status \done\~    
+
+$\yel{\mbox{amanhã}}$
+ 
+%\planned\   kkon.%\underway\
+
+%wc[oiawhdf[oih. nisnc[i[ij.  jf[j[j \fcolorbox{poppy}{poppy}{\fcolorbox{gold}{white}{\color{gold} {\scriptsize \bf\sf{started}}}}
+
+
+% wc[oiawhdf[oih. nisnc[i[ij.  jf[j[j  \fcolorbox{poppy}{poppy}{\fcolorbox{gold}{white}{\color{gold} {\scriptsize \bf\sf{started}}}}
+
+
+% wc[oiawhdf[oih. nisnc[i[ij.  jf[j[j  \fcolorbox{gold}{gold}{\color{white} {{started}}}
+
+%\done
+
+
+\secxx{Itemization}
+
+\begin{itemize}
+      \IteOne{First Level}
+   \begin{itemize}
+       \IteTwo {Second Level}
+      \begin{itemize}
+       \IteThr{Third Level}
+       \end{itemize}
+    \end{itemize}
+ \end{itemize}
+}
+
+% SLIDE DOUBLE COLUMN WITH TITLE
+\SliDT{Title}{First Column}{Second Column}
+
+% SLIDE DOUBLE COLUMN NO TITLE
+\SliD{
+First Column}{
+    { \begin{center}
+    \includegraphics[scale=0.35]{AI2Logo.png}     
+    \end{center} }
+     }
+
+% SLIDE ADVANCED  WITH TITLE
+\SliAdvT{Advanced Section}{ 
+Content
+
+\begin{itemize}
+      \IteOne{First Level}
+   \begin{itemize}
+       \IteTwo {Second Level}
+      \begin{itemize}
+       \IteThr{Third Level}
+       \end{itemize}
+    \end{itemize}
+ \end{itemize}
+}
+
+% SLIDE ADVANCED  NO TITLE
+\SliAdv{ 
+Content
+
+\begin{itemize}
+      \IteOne{First Level}
+   \begin{itemize}
+       \IteTwo {Second Level}
+      \begin{itemize}
+       \IteThr{Third Level}
+       \end{itemize}
+    \end{itemize}
+ \end{itemize}
+
+}
+
+% SLIDE ADVANCED DOUBLE TITLE 		
+\SliAdvDT{Title}{First Column}{Second Column}
+
+% SLIDE ADVANCED DOUBLE NO TITLE 	
+\SliAdvD{First Column}{Second Column}
+
+% BOXES & FRAMES
+
+\SliT{Boxes and Frames}{
+\[
+\yel{\alpha\beta\gamma\delta} + \red{\alpha\beta\gamma\delta} + \gre{\alpha\beta\gamma\delta} + \blu{\alpha\beta\gamma\delta}
+\]
+
+\[
+\fray{\alpha\beta\gamma\delta} + \frar{\alpha\beta\gamma\delta} + \frag{\alpha\beta\gamma\delta} + \frab{\alpha\beta\gamma\delta}
+\]
+
+\[
+\fra{\alpha + \beta + \gamma + \delta}
+\]
+}
+\SliSubTit{Figures}{Positioning Figures in the Slide}
+% FIGURES 
+\Sli{\thispagestyle{empty}
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,0)$) {(0,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,1)$) {(0,1)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,2)$) {(0,2)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,3)$) {(0,3)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,4)$) {(0,4)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,5)$) {(0,5)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,-1)$) {(0,-1)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,-2)$) {(0,-2)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,-3)$) {(0,-3)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,-4)$) {(0,-4)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,-5)$) {(0,-5)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(1,0)$) {(1,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(2,0)$) {(2,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(3,0)$) {(3,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(4,0)$) {(4,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(5,0)$) {(5,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(6,0)$) {(6,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(7,0)$) {(7,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(8,0)$) {(8,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-1,0)$) {(-1,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-2,0)$) {(-2,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-3,0)$) {(-3,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-4,0)$) {(-4,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-5,0)$) {(-5,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-6,0)$) {(-6,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-7,0)$) {(-7,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-8,0)$) {(-8,0)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(1,1)$) {(1,1)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(2,2)$) {(2,2)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(3,3)$) {(3,3)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(4,4)$) {(4,4)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-1,-1)$) {(-1,-1)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-2,-2)$) {(-2,-2)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-3,-3)$) {(-3,-3)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-4,-4)$) {(-4,-4)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-1,1)$) {(-1,1)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-2,2)$) {(-2,2)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-3,3)$) {(-3,3)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-4,4)$) {(-4,4)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(1,-1)$) {(1,-1)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(2,-2)$) {(2,-2)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(3,-3)$) {(3,-3)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(4,-4)$) {(4,-4)};
+}%
+\Sli{\thispagestyle{empty}
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,0)$) {Positions for 4 figures};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-4,2.25)$) {$\bigotimes$};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-4,1.5)$) {\footnotesize \bf (-4,2.25)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(4,2.25)$) {$\bigotimes$};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(4,1.5)$) {\footnotesize \bf (4,2.25)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-4,-1.75)$){$\bigotimes$};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-4,-2.5)$) {\footnotesize \bf (-4,-1.75)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(4,-1.75)$) {$\bigotimes$};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(4,-2.5)$) {\footnotesize \bf (4,-1.75)};
+}%
+\Sli{
+\thispagestyle{empty}
+% 1 | 2 | 2 | 1 = 6 = 16/6 = 2.67 | 5.33 | 5.33 | 2.67
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,0)$) {Positions for 3/6 or 8/16 figures};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,2.25)$) {$\bigotimes$};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(0,1.5)$) {\footnotesize \bf (0,2.25)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-5.33,2.25)$) {$\bigotimes$};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-5.33,1.5)$) {\footnotesize \bf (-5.33,2.25)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(5.33,2.25)$) {$\bigotimes$};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(5.33,1.5)$) {\footnotesize \bf (5.33,2.25)};
+% 1|2|2|2|1 = 8 : 16/8 = 2 : 2 | 4 | 2 + 2 | 4 | 2 =    -6 -2 2 6
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-6,-1.75)$){$\bigotimes$};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-6,-2.5)$) {\footnotesize \bf (-6,-1.75)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-2,-1.75)$){$\bigotimes$};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(-2,-2.5)$) {\footnotesize \bf (-2,-1.75)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(2,-1.75)$) {$\bigotimes$};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(2,-2.5)$) {\footnotesize \bf (2,-1.75)};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(6,-1.75)$) {$\bigotimes$};
+\tikz[remember picture, overlay] \node[anchor=center] at ($(current page.center)+(6,-2.5)$) {\footnotesize \bf (6,-1.75)};
+} %
+\end{document}
